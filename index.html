@@ -1,0 +1,302 @@
+<?php
+
+$conn = mysqli_connect('localhost','root','','contact_db') or die('connection failed');
+
+if(isset($_POST['submit'])){
+
+   $name = mysqli_real_escape_string($conn, $_POST['name']);
+   $email = mysqli_real_escape_string($conn, $_POST['email']);
+   $number = $_POST['number'];
+   $date = $_POST['date'];
+
+   $insert = mysqli_query($conn, "INSERT INTO `contact_form`(name, email, number, date) VALUES('$name','$email','$number','$date')") or die('query failed');
+
+   if($insert){
+      $message[] = 'appointment made successfully!';
+   }else{
+      $message[] = 'appointment failed';
+   }
+
+}
+
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>FAT GROUP</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css">
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="icon" type="images/x-icon" href="./images/favicon.ico">
+</head>
+
+<body>
+   
+<header class="header fixed-top">
+
+   <div class="container">
+
+      <div class="row align-items-center justify-content-between">
+
+   
+         <a href="#home" class="logo"><img class="logo" src="./images/log.png" style="top: 0px; left:0px; width: 5%; height: 5%;"></a>
+   
+         <nav class="nav">
+            <a href="#home">Asosiy</a>
+            <a href="#about">Biz haqimizda</a>
+            <a href="#services">Ish o'rinlari</a>
+            <a href="#reviews">Ishchilar</a>
+            <a href="#contact">Buyurtma</a>
+         </nav>
+
+
+
+         <div id="menu-btn" class="fas fa-bars"></div>
+
+      </div>
+
+   </div>
+
+</header>
+
+
+
+<section class="home" id="home">
+
+   <div class="container">
+
+      <div class="row min-vh-100 align-items-center">
+         <div class="content text-center text-md-left">
+            <h3>Bizdan sifatli matolar xarid qiling</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium itaque, quasi aliquam alias tempora voluptatibus.</p>
+            <a href="#services" class="link-btn">Xarid qilish</a>
+         </div>
+      </div>
+
+   </div>
+
+</section>
+
+
+
+<section class="about" id="about">
+
+   <div class="container">
+
+      <div class="row align-items-center">
+
+         <div class="col-md-6 content">
+            <span>Biz haqimizda</span>
+            <h3>Textile</h3>
+            <p>1991-yil 12 martda ochilgan va shu kungacha 1 mlrd metr dan ortiq mato ishlab chiqqan. Bizning matolar eng muhimi sifatli xatosiz chiqadi. <br>
+               Agar biror hato topsangiz pulingiz 100% qaytariladi.Agar bizga ishonsangiz Buyurtma berishingiz mumkin.Buyurtma berish uchun buyurtmalar dfgvdfvd<br>
+               bo'limiga kirib malumotlarni tolidirib mato buyurtma qilishigiz mumkin!3225th1-yil 12 martda hsrthdfhsochilgan va shu kungacha 1 mlrd metr dan54252<br>
+               ortiq mato ishlab chiqqan. Bizning matolar eng muhimi sifatli xatosiz chiqadi. Agar biror hato topsangiz pulingiz 100% qaytariladi.Agar bizga ishon<br>
+               asefsgrsngiz Buyurtma berishingiz mumkin.thBuyurtma berish uchun buyurtmalastrhr bo'limiga kirib malumotlarni tolidirib mato buyurtma qilishigiz mu<br>
+               19erhrs91-yil 12 martda ochilgrsjs6jrjan va shu kungacha 1 mlrd metr dan ortiq mato rtjrishlab chiqqan. Bizning matolar eng muhimi sifatli xatosiz <br>
+               chiqadi. Agar biror hato topsangiz pulingiz 100% qaytariladi.Agarksbdksds bizga ishonsangiz Buyurtma berishingiz mumkin.Buyurtma besrthsrrish uchu<br>
+               buyurtmalar bo'limiga kirib malumotlarni tolidirib mahsrthsrthrthsrhsrhrrthrhrttto buyurtma qilishigiz mumkin! </p>
+               <br>
+            <!-- <a href="#contact" class="link-btn">Oilamizga Marhamat</a> -->
+         </div>
+
+      </div>
+
+   </div>
+
+</section>
+
+
+
+<section class="services" id="services">
+
+   <h1 class="heading">Bizning Mahsulotlarimiz</h1>
+
+   <div class="box-container container">
+
+      <div class="box">
+         <img src="images/maxsulot-2.jpg" alt="">
+         <h3>Sintetik ko'ylak</h3>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, non?</p>
+      </div>
+
+      <div class="box">
+         <img src="images/maxsulot-3.jpg" alt="">
+         <h3>Paxta tolali ko'ylak</h3>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima?</p>
+      </div>
+
+      <div class="box">
+         <img src="images/maxsulot-4.jpg" alt="">
+         <h3>Sintetik matolar</h3>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima?</p>
+      </div>
+
+      <div class="box">
+         <img src="images/maxsulot-5.jpg" alt="">
+         <h3>Rangli matolar</h3>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima?</p>
+      </div>
+
+      <!-- <div class="box">
+         <img src="images/maxsulot-1.jpg" alt="">
+         <h3>Cavity inspection</h3>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima?</p>
+      </div> -->
+
+   </div>
+
+</section>
+
+
+
+<section class="process">
+
+   <h1 class="heading">Bizning Ishimiz</h1>
+
+   <div class="box-container container">
+
+      <div class="box">
+         <img src="images/kor.jpg" alt="">
+         <h3>Rangli Mato To'qish</h3>
+         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, excepturi?</p>
+      </div>
+
+      <div class="box">
+         <img src="images/ip-chiqarish.jpg" alt="">
+         <h3>Ip O'rash</h3>
+         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, excepturi?</p>
+      </div>
+
+      <div class="box">
+         <img src="images/maxsulot-5.jpg" alt="">
+         <h3>Mato To'qish</h3>
+         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, excepturi?</p>
+      </div>
+
+   </div>
+
+</section>
+
+
+
+<section class="reviews" id="reviews">
+
+   <h1 class="heading">Faol Ishchilar</h1>
+
+   <div class="box-container container">
+
+      <div class="box">
+         <img src="images/pic-1.png" alt="">
+         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, iure? Nemo est aspernatur voluptatum id, laboriosam asperiores iure omnis alias?</p>
+         <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+         </div>
+         <h3>Alexander Sergey</h3>
+         <span>Hisobchi</span>
+      </div>
+
+      <div class="box">
+         <img src="images/pic-2.png" alt="">
+         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, iure? Nemo est aspernatur voluptatum id, laboriosam asperiores iure omnis alias?</p>
+         <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+         </div>
+         <h3>Zinura Alijanova</h3>
+         <span>To'quvchi</span>
+      </div>
+
+      <div class="box">
+         <img src="images/pic-3.png" alt="">
+         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, iure? Nemo est aspernatur voluptatum id, laboriosam asperiores iure omnis alias?</p>
+         <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+         </div>
+         <h3>Abror Ahmadaliyev</h3>
+         <span>Ishchi</span>
+      </div>
+
+   </div>
+
+</section>
+
+
+
+<section class="contact" id="contact">
+
+   <h1 class="heading">Buyurma bering</h1>
+
+   <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+<?php 
+   if(isset($message)){
+    foreach($message as $message){
+      echo <p class="message">
+
+      <span>Ismingiz :</span>
+      <input type="text" name="name" placeholder="Ismingizni kiriting" class="box" required>
+      <span>Elektron pochtangiz :</span>
+      <input type="email" name="email" placeholder="Elektron pochtangizni kiriting" class="box" required>
+      <span>Mobil Raqamingiz :</span>
+      <input type="number" name="number" placeholder="Telefon raqamingizni kiriting" class="box" required>
+      <span>Buyurtma kerak vaqt :</span>
+      <input type="datetime-local" name="date" class="box" required>
+      <input type="submit" value="Buyutma berish" name="submit" class="link-btn">
+   </form>  
+
+</section>
+<section class="footer">
+
+   <div class="box-container container">
+
+      <div class="box">
+         <i class="fas fa-phone"></i>
+         <h3>Mobil Raqam</h3>
+         <p>+998995556565</p>
+         <p>+998996662525</p>
+      </div>
+      
+      <div class="box">
+         <i class="fas fa-map-marker-alt"></i>
+         <h3>Bizning manzil</h3>
+         <p>Bektemir, Tashkent</p>
+      </div>
+
+      <div class="box">
+         <i class="fas fa-clock"></i>
+         <h3>Ish Vaqtimiz</h3>
+         <p>06:00 || 12:00</p>
+      </div>
+
+      <div class="box">
+         <i class="fas fa-envelope"></i>
+         <h3>Elektron Pochta</h3>
+         <p>gmailimiz@gmail.com</p>
+         <p>gmailimiz@gmail.com</p>
+      </div>
+
+   </div>
+
+   <div class="credit"> &copy; copyright <?php echo date('Y'); ?> by <span>Mr.Aminov</span>  </div>
+
+</section>
+<script src="js/script.js"></script>
+
+</body>
+</html>
